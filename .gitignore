@@ -1,0 +1,20 @@
+# Virtual Environment
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database (Local testing ke liye hai, GitHub par nahi jayega)
+db.sqlite3
+
+# Media Files (Jo images admin panel se upload hongi)
+media/
+
+# Environment Variables
+.env
+
+# VS Code settings
+.vscode/

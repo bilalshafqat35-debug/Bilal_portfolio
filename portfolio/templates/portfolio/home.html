@@ -1,0 +1,293 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- HOME SECTION -->
+<div id="home" class="page-section">
+    <section class="hero-section">
+        <div class="container">
+            <div class="reveal">
+                <h1>Hi, I'm <span>Muhammad Bilal</span></h1>
+                <h2 class="mt-4 mb-4" style="color: #999; font-weight: 400;">Full Stack Django Developer</h2>
+                
+                <p class="mt-4 mb-4" style="font-size: 1.2rem; color: #E0E0E0; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    I am a passionate Full Stack Developer with hands-on experience building robust web applications. I have successfully completed <strong>3 professional internships</strong> at <strong>Rhombix Technologies</strong>, <strong>DevelopersHub</strong>, and <strong>Teyzix Core</strong>, where I honed my skills in backend architecture and frontend design.
+                </p>
+
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-5 mt-4">
+                    <span class="badge-internship"><i class="fas fa-briefcase me-2"></i>Rhombix Technologies</span>
+                    <span class="badge-internship"><i class="fas fa-briefcase me-2"></i>DevelopersHub</span>
+                    <span class="badge-internship"><i class="fas fa-briefcase me-2"></i>Teyzix Core</span>
+                </div>
+
+                <!-- Hero Buttons -->
+                <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <button onclick="document.getElementById('menuToggle').click()" class="btn btn-custom">Explore My Work <i class="fas fa-bars ms-2"></i></button>
+                    
+                    <!-- Download Resume Button -->
+                    <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn btn-outline-light" style="border-radius: 0px; padding: 12px 30px; font-weight: bold; border-width: 1px;">
+                        <i class="fas fa-download me-2"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PROJECTS SECTION -->
+<div id="projects" class="page-section" style="display: none;">
+    <section style="background-color: #121212; min-height: 100vh;">
+        <div class="container">
+            <div class="reveal text-center">
+                <h2 class="section-title">My Recent Work</h2>
+                <div class="sleek-line"></div>
+            </div>
+            
+            <div class="premium-grid mt-4">
+                {% for project in projects %}
+                <div class="card card-custom reveal">
+                    {% if project.thumbnail %}
+                        <img src="{{ project.thumbnail.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 250px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text" style="color: #999;">{{ project.short_description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.tech_list %}
+                                <span class="badge bg-light text-dark">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if project.live_link %}
+                            <a href="{{ project.live_link }}" target="_blank" class="btn btn-sm btn-light text-dark font-weight-bold">Live Demo</a>
+                        {% endif %}
+                        {% if project.github_link %}
+                            <a href="{{ project.github_link }}" target="_blank" class="btn btn-sm btn-outline-light">GitHub</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center w-100 reveal">No projects added yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- SERVICES SECTION -->
+<div id="services" class="page-section" style="display: none;">
+    <section style="min-height: 100vh;">
+        <div class="container">
+            <div class="reveal text-center">
+                <h2 class="section-title">Services I Offer</h2>
+                <div class="sleek-line"></div>
+            </div>
+            
+            <div class="row mt-4">
+                {% for service in services %}
+                <div class="col-md-4 mb-4 reveal">
+                    <div class="card card-custom h-100 p-4 text-center">
+                        <div class="mb-3">
+                            <i class="{{ service.icon_class|default:'fas fa-code' }} fa-3x text-white"></i>
+                        </div>
+                        <h4 class="card-title">{{ service.title }}</h4>
+                        <p style="color: #999;">{{ service.description }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center w-100 reveal">No services added yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- SKILLS SECTION -->
+<div id="skills" class="page-section" style="display: none;">
+    <section style="background-color: #121212; min-height: 100vh; padding-top: 80px;">
+        <div class="container">
+            <div class="reveal text-center">
+                <h2 class="section-title">My Skills</h2>
+                <div class="sleek-line"></div>
+            </div>
+            
+            <div class="row mt-5">
+                {% for skill in skills %}
+                <div class="col-md-6 mb-4 reveal">
+                    <div class="skill-card p-4 rounded" style="background-color: #0D0D0D; border: 1px solid #333; transition: 0.3s;">
+                        
+                        <!-- Skill Icon & Name -->
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="d-flex align-items-center">
+                                <i class="{{ skill.icon_class|default:'fas fa-code' }} fa-2x me-3" style="color: #fff;"></i>
+                                <h5 class="mb-0 text-white font-weight-bold">{{ skill.name }}</h5>
+                            </div>
+                            <span class="text-white font-weight-bold">{{ skill.percentage }}%</span>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress" style="height: 8px; background-color: #333; border-radius: 10px;">
+                            <div class="progress-bar bg-white" role="progressbar" style="width: {{ skill.percentage }}%; border-radius: 10px; transition: width 1s ease-in-out;"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center w-100 reveal">No skills added yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CONTACT SECTION (With Form & Cards) -->
+<div id="contact" class="page-section" style="display: none;">
+    <section style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top left, #1a1a1a, #0D0D0D); padding: 60px 0;">
+        <div class="container">
+            <div class="row">
+                <!-- Left Side Text & Form -->
+                <div class="col-lg-6 mb-5 reveal">
+                    <h4 style="color: #999; letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase;">Get In Touch</h4>
+                    <h1 style="font-size: 4rem; font-weight: 800; color: #FFFFFF; margin-bottom: 20px;">Let's Connect</h1>
+                    <p style="color: #999; font-size: 1.2rem; line-height: 1.6; max-width: 500px; margin-bottom: 30px;">
+                        Looking to build a modern web application or need a Django expert? Reach out through any of these platforms — I'll get back to you soon.
+                    </p>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper" style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        
+                        <!-- Success Message Alert -->
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-success" style="background-color: #1a1a1a; color: #fff; border: 1px solid #28a745;">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-custom w-100 mt-2">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Right Side Contact Cards -->
+                <div class="col-lg-6 reveal">
+                    <div class="contact-cards-wrapper">
+                        
+                        <!-- Email Card -->
+                        <a href="mailto:bilalshafqat35@gmail.com" class="contact-card">
+                            <div class="contact-label">EMAIL</div>
+                            <div class="contact-value">bilalshafqat35@gmail.com</div>
+                        </a>
+                        
+                        <!-- WhatsApp Card -->
+                        <a href="https://wa.me/923206895845" target="_blank" class="contact-card">
+                            <div class="contact-label">WHATSAPP</div>
+                            <div class="contact-value">+92 320 6895845</div>
+                        </a>
+
+                        <!-- GitHub Card -->
+                        <a href="https://github.com/bilalshafqat35-debug" target="_blank" class="contact-card">
+                            <div class="contact-label">GITHUB</div>
+                            <div class="contact-value"><i class="fa-brands fa-github me-2"></i> Connect on GitHub</div>
+                        </a>
+
+                        <!-- LinkedIn Card -->
+                        <a href="https://www.linkedin.com/in/muhammad-bilal-shafqat-b54992391" target="_blank" class="contact-card">
+                            <div class="contact-label">LINKEDIN</div>
+                            <div class="contact-value"><i class="fa-brands fa-linkedin me-2"></i> Connect on LinkedIn</div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Custom CSS for Contact Cards & Skills -->
+<style>
+    /* Contact Cards Styling */
+    .contact-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact-card {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 25px 30px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    .contact-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 3px; height: 100%;
+        background-color: #FFFFFF;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s ease;
+    }
+    .contact-card:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateX(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .contact-card:hover::before {
+        transform: scaleY(1);
+    }
+    .contact-label {
+        color: #999;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        transition: color 0.3s;
+    }
+    .contact-card:hover .contact-label {
+        color: #FFFFFF;
+    }
+    .contact-value {
+        color: #E0E0E0;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    /* Contact Form Styling */
+    .contact-form-wrapper input, 
+    .contact-form-wrapper textarea {
+        background-color: #0D0D0D !important;
+        border: 1px solid #333 !important;
+        color: #E0E0E0 !important;
+        border-radius: 8px;
+        padding: 12px;
+    }
+    .contact-form-wrapper input:focus, 
+    .contact-form-wrapper textarea:focus {
+        background-color: #121212 !important;
+        border-color: #FFFFFF !important;
+        box-shadow: none !important;
+        color: #FFFFFF !important;
+    }
+    .contact-form-wrapper label {
+        color: #999;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    /* Skills Hover Effect */
+    .skill-card:hover {
+        border-color: #FFFFFF !important;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255,255,255,0.05);
+    }
+</style>
+{% endblock %}
