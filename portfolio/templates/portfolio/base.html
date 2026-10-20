@@ -21,20 +21,21 @@
         
         /* Floating Hamburger Menu Button */
                 /* Floating Hamburger Menu Button */
+                /* Floating Hamburger Menu Button */
         .menu-btn {
             position: fixed;
             top: 20px;
-            right: 20px; /* Left ki jagah Right kar diya */
-            left: auto;  /* Left ko auto kar diya taake text ke sath na aaye */
-            z-index: 1050;
-            background: #0D0D0D; /* Text ke sath mix na ho isliye background diya */
+            right: 20px; /* Right side par fix kiya */
+            left: auto;
+            z-index: 9999; /* Sab se upar dikhe */
+            background-color: #0D0D0D; /* Text ke peeche chhupane ke liye solid black background */
             border: 1px solid #333;
             color: #FFFFFF;
             font-size: 24px;
-            padding: 5px 15px;
+            padding: 8px 15px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Thoda sa shadow */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Shadow taake alag nazar aaye */
         }
         .menu-btn:hover {
             background: #FFFFFF;
@@ -225,7 +226,7 @@
            ========================================= */
         @media (max-width: 768px) {
             /* Hero Section */
-            .hero-section { padding: 100px 15px 50px 15px; height: auto; min-height: 100vh; }
+            .hero-section { padding: 120px 15px 50px 15px; height: auto; min-height: 100vh; }
             .hero-section h1 { font-size: 2.5rem; } /* Heading choti ki */
             .hero-section h2 { font-size: 1.2rem; }
             .hero-section p { font-size: 1rem; }
@@ -234,7 +235,7 @@
             .container { padding-left: 20px; padding-right: 20px; }
             
             /* Menu Button */
-                        .menu-btn { top: 15px; right: 15px; left: auto; font-size: 20px; padding: 5px 12px; }
+            .menu-btn { top: 15px; right: 15px; left: auto; font-size: 20px; padding: 6px 12px; }
 
             /* Full Screen Menu */
             .fullscreen-menu ul li a { font-size: 1.5rem; }
