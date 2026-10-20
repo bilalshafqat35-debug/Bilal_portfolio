@@ -217,6 +217,42 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(255,255,255,0.1);
         }
+                /* =========================================
+           MOBILE RESPONSIVENESS (Screens < 768px)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Hero Section */
+            .hero-section { padding: 100px 15px 50px 15px; height: auto; min-height: 100vh; }
+            .hero-section h1 { font-size: 2.5rem; } /* Heading choti ki */
+            .hero-section h2 { font-size: 1.2rem; }
+            .hero-section p { font-size: 1rem; }
+            
+            /* Text Padding */
+            .container { padding-left: 20px; padding-right: 20px; }
+            
+            /* Menu Button */
+            .menu-btn { top: 15px; left: 15px; font-size: 20px; padding: 5px 12px; }
+
+            /* Full Screen Menu */
+            .fullscreen-menu ul li a { font-size: 1.5rem; }
+            .fullscreen-menu ul li a i { font-size: 1.2rem; margin-right: 10px; }
+
+            /* Badges */
+            .badge-internship { font-size: 0.8rem; padding: 6px 12px; margin-bottom: 5px; }
+
+            /* Sections Padding */
+            section { padding: 50px 0; }
+            .section-title { font-size: 1.5rem; }
+
+            /* Contact Section */
+            #contact h1 { font-size: 2.5rem !important; }
+            .contact-form-wrapper { padding: 20px !important; }
+            .contact-card { padding: 15px 20px; }
+            .contact-value { font-size: 1.1rem; }
+            
+            /* Buttons */
+            .btn-custom, .btn-outline-light { padding: 10px 20px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
