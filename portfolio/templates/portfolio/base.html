@@ -11,6 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Ensure mobile navbar links display horizontally like laptop */
+@media (max-width: 768px) {
+    .navbar-custom {
+        padding: 10px 0 !important;
+    }
+
+    .navbar-brand-custom {
+        font-size: 1.15rem !important;
+    }
+
+    .nav-links-desktop {
+        gap: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    .nav-link-custom {
+        font-size: 0.82rem !important;
+        padding: 4px 2px !important;
+        color: #A3A3A3 !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-link-custom.active {
+        color: #FFFFFF !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very narrow phones, center the links right under the logo */
+    .navbar-custom .container {
+        justify-content: center !important;
+        gap: 6px !important;
+    }
+}
         /* Enable smooth scrolling across the entire page */
         html {
             scroll-behavior: smooth;
@@ -227,43 +263,68 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(255,255,255,0.1);
         }
-                /* =========================================
-           MOBILE RESPONSIVENESS (Screens < 768px)
-           ========================================= */
-        @media (max-width: 768px) {
-            /* Hero Section */
-            .hero-section { padding: 120px 15px 50px 15px; height: auto; min-height: 100vh; }
-            .hero-section h1 { font-size: 2.5rem; } /* Heading choti ki */
-            .hero-section h2 { font-size: 1.2rem; }
-            .hero-section p { font-size: 1rem; }
-            
-            /* Text Padding */
-            .container { padding-left: 20px; padding-right: 20px; }
-            
-            /* Menu Button */
-            .menu-btn { top: 15px; right: 15px; left: auto; font-size: 20px; padding: 6px 12px; }
+        /* =========================================================
+   PERFECT MOBILE RESPONSIVENESS (Screens < 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+    /* 1. Mobile Navbar: Clean & Compact */
+    .navbar-custom {
+        padding: 12px 0;
+    }
+    
+    .navbar-brand-custom {
+        font-size: 1.25rem;
+    }
 
-            /* Full Screen Menu */
-            .fullscreen-menu ul li a { font-size: 1.5rem; }
-            .fullscreen-menu ul li a i { font-size: 1.2rem; margin-right: 10px; }
+    /* 2. Hero Section: Fit everything on phone screen */
+    .hero-section {
+        min-height: 85vh;
+        padding: 95px 12px 35px 12px !important;
+    }
 
-            /* Badges */
-            .badge-internship { font-size: 0.8rem; padding: 6px 12px; margin-bottom: 5px; }
+    .hero-title {
+        font-size: 2rem !important; /* Scaled down so it doesn't take up 70% of screen */
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+    }
 
-            /* Sections Padding */
-            section { padding: 50px 0; }
-            .section-title { font-size: 1.5rem; }
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
+    }
 
-            /* Contact Section */
-            #contact h1 { font-size: 2.5rem !important; }
-            .contact-form-wrapper { padding: 20px !important; }
-            .contact-card { padding: 15px 20px; }
-            .contact-value { font-size: 1.1rem; }
-            
-            /* Buttons */
-            .btn-custom, .btn-outline-light { padding: 10px 20px; font-size: 0.9rem; }
-        }
-        
+    .availability-pill {
+        font-size: 0.78rem !important;
+        padding: 4px 12px !important;
+        margin-bottom: 16px !important;
+    }
+
+    /* 3. Proof Badges on Mobile */
+    .badge-internship {
+        font-size: 0.75rem !important;
+        padding: 5px 10px !important;
+    }
+
+    /* 4. Action Buttons: Clean Stack on Mobile */
+    .btn-primary-cta, 
+    .btn-secondary-cta, 
+    .btn-whatsapp-cta {
+        padding: 10px 18px !important;
+        font-size: 0.88rem !important;
+        width: 100%; /* Neatly stacked and full-width on phone for easy tapping */
+        max-width: 320px;
+    }
+
+    /* 5. Sleek Minimal Menu Button */
+    #menuToggle {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 8px !important;
+        color: #FFFFFF !important;
+        padding: 6px 10px !important;
+    }
+}
         /* --- MODERN GLASSMORPHIC NAVBAR --- */
         .navbar-custom {
             position: fixed;
@@ -857,37 +918,32 @@
 </head>
 <body>
 
-    <!-- Sticky Glassmorphic Navbar -->
-    <nav class="navbar-custom">
-        <div class="container d-flex justify-content-between align-items-center">
-            <!-- Logo / Initials -->
-            <a href="#home" class="navbar-brand-custom">
-                Bilal<span>.dev</span>
+        <!-- Sticky Glassmorphic Navbar (Same on Mobile & Laptop) -->
+<nav class="navbar-custom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="#home" class="navbar-brand-custom">
+            Bilal<span>.dev</span>
+        </a>
+
+        <!-- Navigation Links (Visible on BOTH Laptop AND Mobile) -->
+        <ul class="nav-links-desktop d-flex align-items-center mb-0">
+            <li><a href="#home" class="nav-link-custom active">Home</a></li>
+            <li><a href="#projects" class="nav-link-custom">Projects</a></li>
+            <li><a href="#services" class="nav-link-custom">Services</a></li>
+            <li><a href="#skills" class="nav-link-custom">Skills</a></li>
+            <li><a href="#contact" class="nav-link-custom">Contact</a></li>
+        </ul>
+
+        <!-- Action Button (Visible on tablets and larger) -->
+        <div class="d-none d-sm-flex align-items-center gap-2">
+            <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn btn-sm btn-outline-light" style="border-radius: 6px; padding: 6px 14px; font-size: 0.85rem;">
+                <i class="fas fa-download me-1"></i> CV
             </a>
-
-            <!-- Desktop Navigation Links -->
-            <ul class="nav-links-desktop d-none d-lg-flex">
-                <li><a href="#home" class="nav-link-custom active">Home</a></li>
-                <li><a href="#projects" class="nav-link-custom">Projects</a></li>
-                <li><a href="#services" class="nav-link-custom">Services</a></li>
-                <li><a href="#skills" class="nav-link-custom">Skills</a></li>
-                <li><a href="#contact" class="nav-link-custom">Contact</a></li>
-            </ul>
-
-            <!-- Action Buttons -->
-            <div class="d-none d-lg-flex align-items-center gap-3">
-                <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn btn-sm btn-outline-light" style="border-radius: 6px; padding: 7px 16px;">
-                    <i class="fas fa-download me-1"></i> CV
-                </a>
-                <a href="#contact" class="nav-btn-cta">Let's Talk</a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button class="btn btn-outline-light d-lg-none" id="menuToggle" style="border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px;">
-                <i class="fas fa-bars" id="menuIcon"></i>
-            </button>
+            <a href="#contact" class="nav-btn-cta" style="padding: 6px 16px; font-size: 0.85rem;">Let's Talk</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Full Screen Menu Overlay -->
     <div class="fullscreen-menu" id="fullscreenMenu">
