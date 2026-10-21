@@ -11,6 +11,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* --- SLEEK MOBILE DRAWER & NAV STYLING --- */
+.btn-cv-pill {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-cv-pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #FFFFFF;
+}
+
+.mobile-menu-trigger {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #FFFFFF;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-trigger:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Drawer */
+.mobile-drawer {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-drawer.open {
+    max-height: 420px;
+}
+
+.mobile-drawer-links {
+    list-style: none;
+    padding: 16px 20px;
+    margin: 0;
+}
+
+.mobile-drawer-links li {
+    margin-bottom: 6px;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    color: #E2E8F0;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+    background: rgba(99, 102, 241, 0.12);
+    color: #FFFFFF;
+}
         /* Ensure mobile navbar links display horizontally like laptop */
 @media (max-width: 768px) {
     .navbar-custom {
@@ -918,16 +998,16 @@
 </head>
 <body>
 
-        <!-- Sticky Glassmorphic Navbar (Same on Mobile & Laptop) -->
+        <!-- Modern Sticky Navbar -->
 <nav class="navbar-custom">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo -->
         <a href="#home" class="navbar-brand-custom">
             Bilal<span>.dev</span>
         </a>
 
-        <!-- Navigation Links (Visible on BOTH Laptop AND Mobile) -->
-        <ul class="nav-links-desktop d-flex align-items-center mb-0">
+        <!-- Desktop Links (Hidden on mobile, clean on laptop) -->
+        <ul class="nav-links-desktop d-none d-md-flex align-items-center mb-0">
             <li><a href="#home" class="nav-link-custom active">Home</a></li>
             <li><a href="#projects" class="nav-link-custom">Projects</a></li>
             <li><a href="#services" class="nav-link-custom">Services</a></li>
@@ -935,12 +1015,36 @@
             <li><a href="#contact" class="nav-link-custom">Contact</a></li>
         </ul>
 
-        <!-- Action Button (Visible on tablets and larger) -->
-        <div class="d-none d-sm-flex align-items-center gap-2">
-            <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn btn-sm btn-outline-light" style="border-radius: 6px; padding: 6px 14px; font-size: 0.85rem;">
-                <i class="fas fa-download me-1"></i> CV
+        <!-- Right Side Actions -->
+        <div class="d-flex align-items-center gap-2">
+            <!-- CV Button (Visible on both Mobile and Laptop) -->
+            <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn-cv-pill">
+                <i class="fas fa-file-arrow-down me-1"></i> CV
             </a>
-            <a href="#contact" class="nav-btn-cta" style="padding: 6px 16px; font-size: 0.85rem;">Let's Talk</a>
+
+            <!-- Let's Talk Button (Laptop only) -->
+            <a href="#contact" class="nav-btn-cta d-none d-md-inline-block">Let's Talk</a>
+
+            <!-- Modern Mobile Menu Trigger (Mobile only) -->
+            <button class="mobile-menu-trigger d-md-none" id="mobileMenuBtn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars" id="mobileMenuIcon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Smooth Mobile Dropdown Drawer -->
+    <div class="mobile-drawer d-md-none" id="mobileDrawer">
+        <ul class="mobile-drawer-links">
+            <li><a href="#home" class="mobile-nav-link"><i class="fas fa-house me-3 text-indigo"></i>Home</a></li>
+            <li><a href="#projects" class="mobile-nav-link"><i class="fas fa-layer-group me-3 text-indigo"></i>Projects</a></li>
+            <li><a href="#services" class="mobile-nav-link"><i class="fas fa-bolt me-3 text-indigo"></i>Services</a></li>
+            <li><a href="#skills" class="mobile-nav-link"><i class="fas fa-microchip me-3 text-indigo"></i>Skills</a></li>
+            <li><a href="#contact" class="mobile-nav-link"><i class="fas fa-paper-plane me-3 text-indigo"></i>Contact</a></li>
+        </ul>
+        <div class="p-3 pt-0">
+            <a href="#contact" class="btn-primary-cta w-100 justify-content-center text-center mobile-nav-link">
+                Let's Talk <i class="fas fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 </nav>
@@ -985,6 +1089,29 @@
 
     <!-- Scripts -->
     <script>
+        // --- MOBILE DRAWER TOGGLE ---
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+if (mobileMenuBtn && mobileDrawer) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('open');
+        if (mobileDrawer.classList.contains('open')) {
+            mobileMenuIcon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            mobileMenuIcon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+
+    // Auto-close drawer when any link is clicked
+    mobileDrawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileDrawer.classList.remove('open');
+            mobileMenuIcon.classList.replace('fa-times', 'fa-bars');
+        });
+    });
+}
         // --- MOBILE MENU TOGGLE ---
         const menuToggle = document.getElementById('menuToggle');
         const fullscreenMenu = document.getElementById('fullscreenMenu');
