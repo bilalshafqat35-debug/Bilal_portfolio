@@ -22,11 +22,13 @@
 
                 <!-- Hero Buttons -->
                 <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
-                    <button onclick="document.getElementById('menuToggle').click()" class="btn btn-custom">Explore My Work <i class="fas fa-bars ms-2"></i></button>
+                    <a href="#projects" class="btn-primary-cta">
+                        Explore My Work <i class="fas fa-arrow-down ms-2"></i>
+                    </a>
                     
                     <!-- Download Resume Button -->
-                    <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn btn-outline-light" style="border-radius: 0px; padding: 12px 30px; font-weight: bold; border-width: 1px;">
-                        <i class="fas fa-download me-2"></i> Download Resume
+                    <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn-secondary-cta">
+                        <i class="fas fa-file-arrow-down me-2"></i> Download CV
                     </a>
                 </div>
             </div>
@@ -35,7 +37,7 @@
 </div>
 
 <!-- PROJECTS SECTION -->
-<div id="projects" class="page-section" style="display: none;">
+<div id="projects" class="page-section">
     <section style="background-color: #121212; min-height: 100vh;">
         <div class="container">
             <div class="reveal text-center">
@@ -74,7 +76,7 @@
 </div>
 
 <!-- SERVICES SECTION -->
-<div id="services" class="page-section" style="display: none;">
+<div id="services" class="page-section">
     <section style="min-height: 100vh;">
         <div class="container">
             <div class="reveal text-center">
@@ -102,7 +104,7 @@
 </div>
 
 <!-- SKILLS SECTION -->
-<div id="skills" class="page-section" style="display: none;">
+<div id="skills" class="page-section">
     <section style="background-color: #121212; min-height: 100vh; padding-top: 80px;">
         <div class="container">
             <div class="reveal text-center">
@@ -140,7 +142,7 @@
 </div>
 
 <!-- CONTACT SECTION (With Form & Cards) -->
-<div id="contact" class="page-section" style="display: none;">
+<div id="contact" class="page-section">
     <section style="min-height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top left, #1a1a1a, #0D0D0D); padding: 60px 0;">
         <div class="container">
             <div class="row">
