@@ -2,49 +2,99 @@
 {% load static %}
 
 {% block content %}
-<!-- HOME SECTION -->
+
+<!-- ==================== HOME / HERO SECTION ==================== -->
 <div id="home" class="page-section">
     <section class="hero-section">
-        <div class="container text-center">
-            <div class="reveal">
+        <div class="container">
+            <div class="row align-items-center">
                 
-                <!-- Live Availability Badge -->
-                <div class="d-inline-flex align-items-center availability-pill mb-4">
-                    <span class="status-pulse-dot me-2"></span>
-                    <span>Available for Full-Time Roles & Freelance</span>
-                </div>
-
-                <!-- Main Headline -->
-                <h1 class="hero-title">
-                    Building Scalable Web Systems with <br>
-                    <span class="gradient-text">Python, Django & React</span>
-                </h1>
-                
-                <!-- Bio / Positioning -->
-                <p class="hero-subtitle mt-4 mb-4">
-                    Final-Year CS Student at <strong>University of Education, Lahore</strong> with <strong>3 completed software engineering internships</strong>. I design robust backend architectures, clean RESTful APIs, and fast, responsive web applications.
-                </p>
-
-                <!-- Internship Proof Badges -->
-                <div class="d-flex justify-content-center flex-wrap gap-2 mb-5 mt-4">
-                    <span class="badge-internship"><i class="fas fa-building me-2 text-indigo"></i>Rhombix Technologies</span>
-                    <span class="badge-internship"><i class="fas fa-code-branch me-2 text-indigo"></i>DevelopersHub</span>
-                    <span class="badge-internship"><i class="fas fa-laptop-code me-2 text-indigo"></i>Teyzix Core</span>
-                </div>
-
-                <!-- Action CTAs -->
-                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
-                    <a href="#projects" class="btn-primary-cta">
-                        Explore My Work <i class="fas fa-arrow-down ms-2"></i>
-                    </a>
+                <!-- Left Side: Text -->
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0 reveal text-center text-lg-start"></div>
+                    <p class="hero-greeting">Hello, It's Me</p>
+                    <h1 class="hero-name">Muhammad Bilal</h1>
+                    <h2 class="hero-role">And I'm a <span>Full Stack Developer</span></h2>
                     
-                    <a href="{% static 'resume/Muhammad_Bilal_Resume.pdf' %}" download class="btn-secondary-cta">
-                        <i class="fas fa-file-arrow-down me-2"></i> Download CV
-                    </a>
+                    <p class="hero-desc">
+                        Final-Year CS Student at <strong style="color:#fff;">University of Education, Lahore</strong> with 
+                        <strong style="color:#fff;">3 completed software engineering internships</strong>. 
+                        I build robust backend architectures, clean RESTful APIs, and fast, responsive web applications 
+                        using Python, Django & React.
+                    </p>
 
-                    <!-- Direct WhatsApp Quick Chat (Update phone number if different) -->
-                    <a href="https://wa.me/923000000000?text=Hi%20Bilal,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="btn-whatsapp-cta">
-                        <i class="fab fa-whatsapp me-2"></i> Quick Chat
+                    <!-- Social Icons -->
+                    <div class="social-icons">
+                        <a href="https://github.com/bilalshafqat35-debug" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/923206895845" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/muhammad-bilal-shafqat-b54992391" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:bilalshafqat35@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="#about" class="btn-cyan">
+                        More About Me <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+
+                <!-- Right Side: Glowing Profile Photo -->
+                <!-- Added d-none d-lg-block so it hides on mobile and only shows on laptop -->
+<div class="col-lg-6 text-center reveal d-none d-lg-block">
+    <div class="profile-photo-wrapper">
+        <div class="profile-photo-ring">
+            <img src="{% static 'images/bilal-profile.jpg' %}" alt="Muhammad Bilal">
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- ==================== ABOUT ME SECTION ==================== -->
+<div id="about" class="page-section">
+    <section class="about-section"></section>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                
+                <!-- Left: Photo -->
+                <!-- Hide photo on mobile -->
+<div class="col-lg-5 text-center reveal d-none d-lg-block">
+    <div class="about-photo-wrapper">
+        <img src="{% static 'images/bilal-profile.jpg' %}" alt="Muhammad Bilal">
+    </div>
+</div>
+                <!-- Right: Text -->
+                <div class="col-lg-7 col-12 reveal"></div>
+                    <h2 class="section-heading">About <span>Me</span></h2>
+                    <h4 class="about-subtitle">Full Stack Developer!</h4>
+                    <p class="about-text">
+                        I am a passionate Full Stack Developer specializing in Python, Django, and React with extensive 
+                        hands-on experience from <strong style="color:#fff;">3 professional internships</strong> at 
+                        <strong style="color:#fff;">Rhombix Technologies</strong>, 
+                        <strong style="color:#fff;">DevelopersHub</strong>, and 
+                        <strong style="color:#fff;">Teyzix Core</strong>. 
+                        I take pride in building clean, scalable backend architectures and intuitive frontend interfaces 
+                        that solve real business problems.
+                    </p>
+                    <p class="about-text">
+                        Currently in my final year of BSCS at the University of Education, Lahore, I am working on an 
+                        enterprise-grade <strong style="color:#fff;">Healthcare Billing, Inventory & POS System</strong> 
+                        featuring Django REST APIs, PyQt desktop clients, OCR-based prescription scanning, and 
+                        fuzzy medicine matching — a project that demonstrates my ability to design and deliver 
+                        complex, production-ready software systems.
+                    </p>
+                    <a href="#contact" class="btn-cyan">
+                        More About Me <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
 
@@ -53,18 +103,162 @@
     </section>
 </div>
 
-<!-- PROJECTS SECTION -->
-<!-- PROJECTS SECTION -->
-<div id="projects" class="page-section py-5">
-    <section>
+
+<!-- ==================== SERVICES SECTION ==================== -->
+<div id="services" class="page-section">
+    <section class="services-section"></section>
         <div class="container">
-            <!-- Section Header -->
+            <!-- Header -->
             <div class="reveal text-center">
-                <span class="section-tag"><i class="fas fa-layer-group me-1"></i> Portfolio</span>
-                <h2 class="section-heading">Featured Projects</h2>
-                <p class="section-desc">Production-ready applications and software solutions built with Python, Django, and modern frontend tools.</p>
+                <h2 class="section-heading">My <span>Services</span></h2>
+                <p class="section-desc">Tailored engineering services to take your product from concept to high-performance production deployment.</p>
             </div>
-            
+
+            <!-- Cards Grid -->
+            <div class="row g-4 mt-2">
+                {% for service in services %}
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="service-card">
+                        <div class="service-icon-box">
+                            <i class="{{ service.icon_class|default:'fas fa-code' }}"></i>
+                        </div>
+                        <h3 class="service-title">{{ service.title }}</h3>
+                        <p class="service-desc">{{ service.description }}</p>
+                        <a href="#contact" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center reveal" style="color: var(--text-muted);">
+                    <p>No services listed yet. Add them from your Django Admin panel.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- ==================== SKILLS SECTION ==================== -->
+<div id="skills" class="page-section">
+    <section class="skills-section"></section>
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- LEFT: Technical Skills (Progress Bars from DB) -->
+                <div class="col-lg-6 reveal">
+                    <h2 class="section-heading text-center text-lg-start mb-4">
+                        <span style="border-bottom: 3px solid var(--cyan); padding-bottom: 4px;">Technical Skills</span>
+                    </h2>
+
+                    {% for skill in skills %}
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <div class="d-flex align-items-center">
+                                <div class="skill-icon-small">
+                                    <i class="{{ skill.icon_class|default:'fas fa-code' }}"></i>
+                                </div>
+                                <span class="skill-name-text">{{ skill.name }}</span>
+                            </div>
+                            <span class="skill-percent">{{ skill.percentage }}%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" style="width: {{ skill.percentage }}%;"></div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p style="color: var(--text-muted);">No technical skills listed yet.</p>
+                    {% endfor %}
+                </div>
+
+                <!-- RIGHT: Professional Skills (Circular Rings) -->
+                <div class="col-lg-6 reveal">
+                    <h2 class="section-heading text-center text-lg-start mb-4">
+                        <span style="border-bottom: 3px solid var(--cyan); padding-bottom: 4px;">Professional Skills</span>
+                    </h2>
+
+                    <div class="row mt-3">
+                        <!-- Creativity -->
+                        <div class="col-6 col-md-3">
+                            <div class="circle-skill">
+                                <div class="circle-ring">
+                                    <svg width="110" height="110">
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="var(--cyan)" stroke-width="6"
+                                            stroke-dasharray="301.6" stroke-dashoffset="30.16"
+                                            stroke-linecap="round" style="filter: drop-shadow(0 0 6px var(--cyan-glow));"/>
+                                    </svg>
+                                    <span class="circle-text">90%</span>
+                                </div>
+                                <div class="circle-label">Creativity</div>
+                            </div>
+                        </div>
+
+                        <!-- Communication -->
+                        <div class="col-6 col-md-3">
+                            <div class="circle-skill">
+                                <div class="circle-ring">
+                                    <svg width="110" height="110">
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="var(--cyan)" stroke-width="6"
+                                            stroke-dasharray="301.6" stroke-dashoffset="105.56"
+                                            stroke-linecap="round" style="filter: drop-shadow(0 0 6px var(--cyan-glow));"/>
+                                    </svg>
+                                    <span class="circle-text">65%</span>
+                                </div>
+                                <div class="circle-label">Communication</div>
+                            </div>
+                        </div>
+
+                        <!-- Problem Solving -->
+                        <div class="col-6 col-md-3">
+                            <div class="circle-skill">
+                                <div class="circle-ring">
+                                    <svg width="110" height="110">
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="var(--cyan)" stroke-width="6"
+                                            stroke-dasharray="301.6" stroke-dashoffset="75.4"
+                                            stroke-linecap="round" style="filter: drop-shadow(0 0 6px var(--cyan-glow));"/>
+                                    </svg>
+                                    <span class="circle-text">75%</span>
+                                </div>
+                                <div class="circle-label">Problem Solving</div>
+                            </div>
+                        </div>
+
+                        <!-- Teamwork -->
+                        <div class="col-6 col-md-3">
+                            <div class="circle-skill">
+                                <div class="circle-ring">
+                                    <svg width="110" height="110">
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+                                        <circle cx="55" cy="55" r="48" fill="none" stroke="var(--cyan)" stroke-width="6"
+                                            stroke-dasharray="301.6" stroke-dashoffset="45.24"
+                                            stroke-linecap="round" style="filter: drop-shadow(0 0 6px var(--cyan-glow));"/>
+                                    </svg>
+                                    <span class="circle-text">85%</span>
+                                </div>
+                                <div class="circle-label">Teamwork</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- ==================== PROJECTS SECTION ==================== -->
+<div id="projects" class="page-section">
+    <section class="projects-section"></section>
+        <div class="container">
+            <!-- Header -->
+            <div class="reveal text-center">
+                <h2 class="section-heading">Latest <span>Projects</span></h2>
+                <p class="section-desc">Production-ready applications built with Python, Django, and modern frontend tools.</p>
+            </div>
+
             <!-- Projects Grid -->
             <div class="row g-4 mt-2">
                 {% for project in projects %}
@@ -78,13 +272,11 @@
                         <div class="project-body">
                             <h3 class="project-title">{{ project.title }}</h3>
                             <p class="project-desc">{{ project.short_description }}</p>
-                            
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 {% for tech in project.tech_list %}
                                     <span class="tech-badge">{{ tech }}</span>
                                 {% endfor %}
                             </div>
-                            
                             <div class="d-flex gap-2 mt-auto">
                                 {% if project.live_link %}
                                     <a href="{{ project.live_link }}" target="_blank" class="btn-project-live">
@@ -101,7 +293,7 @@
                     </div>
                 </div>
                 {% empty %}
-                <div class="col-12 text-center text-muted reveal">
+                <div class="col-12 text-center reveal" style="color: var(--text-muted);">
                     <p>No projects uploaded yet. Add them from your Django Admin panel!</p>
                 </div>
                 {% endfor %}
@@ -110,102 +302,83 @@
     </section>
 </div>
 
-<!-- SERVICES SECTION -->
-<div id="services" class="page-section py-5">
-    <section>
-        <div class="container">
-            <!-- Section Header -->
-            <div class="reveal text-center">
-                <span class="section-tag"><i class="fas fa-bolt me-1"></i> Capabilities</span>
-                <h2 class="section-heading">Services & Solutions</h2>
-                <p class="section-desc">Tailored engineering services to take your product from architectural concept to high-performance production deployment.</p>
-            </div>
-            
-            <!-- Services Grid -->
-            <div class="row g-4 mt-2">
-                {% for service in services %}
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="service-card">
-                        <div class="service-icon-box">
-                            <i class="{{ service.icon_class|default:'fas fa-code' }}"></i>
-                        </div>
-                        <h3 class="service-title">{{ service.title }}</h3>
-                        <p class="service-desc">{{ service.description }}</p>
-                    </div>
-                </div>
-                {% empty %}
-                <div class="col-12 text-center text-muted reveal">
-                    <p>No services listed yet.</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-</div>
 
-<!-- SKILLS SECTION -->
-<div id="skills" class="page-section py-5">
-    <section>
+<!-- ==================== CONTACT SECTION ==================== -->
+<div id="contact" class="page-section">
+    <section class="contact-section"></section>
         <div class="container">
-            <!-- Section Header -->
-            <div class="reveal text-center">
-                <span class="section-tag"><i class="fas fa-microchip me-1"></i> Expertise</span>
-                <h2 class="section-heading">Technical Proficiency</h2>
-                <p class="section-desc">Core competencies across backend engineering, RESTful API development, frontend frameworks, and database architecture.</p>
-            </div>
-            
-            <!-- Skills Grid -->
-            <div class="row g-4 mt-2">
-                {% for skill in skills %}
-                <div class="col-lg-6 reveal">
-                    <div class="skill-card-modern">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <div class="skill-icon-wrap">
-                                    <i class="{{ skill.icon_class|default:'fas fa-code' }}"></i>
-                                </div>
-                                <h4 class="skill-name">{{ skill.name }}</h4>
-                            </div>
-                            <span class="skill-percentage-pill">{{ skill.percentage }}%</span>
-                        </div>
-
-                        <!-- Gradient Progress Meter -->
-                        <div class="progress-track">
-                            <div class="progress-fill" style="width: {{ skill.percentage }}%;"></div>
-                        </div>
-                    </div>
-                </div>
-                {% empty %}
-                <div class="col-12 text-center text-muted reveal">
-                    <p>No skills listed yet.</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-</div>
-
-<!-- CONTACT SECTION -->
-<div id="contact" class="page-section py-5">
-    <section>
-        <div class="container">
-            <!-- Section Header -->
+            <!-- Header -->
             <div class="reveal text-center mb-5">
-                <span class="section-tag"><i class="fas fa-paper-plane me-1"></i> Contact</span>
-                <h2 class="section-heading">Let's Connect & Build</h2>
-                <p class="section-desc">Have a software engineering opportunity, freelance project, or question about my work? Drop me a message or reach out directly.</p>
+                <h2 class="section-heading">Contact <span>Me</span></h2>
+                <p class="section-desc">Have a project idea, freelance opportunity, or job opening? Let's connect and build something great together.</p>
             </div>
 
-            <div class="row g-5 align-items-center">
-                <!-- Left Side Form -->
+            <div class="row g-5 align-items-start">
+                
+                <!-- Left: Info Text + Contact Cards -->
+                <div class="col-lg-5 reveal">
+                    <h3 style="color: var(--text-primary); font-weight: 700; margin-bottom: 16px;">Let's Work Together</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px;">
+                        Looking to build a modern web application or need a Django expert? 
+                        Reach out through any of these platforms — I'll get back to you within 24 hours.
+                    </p>
+
+                    <!-- Email Card -->
+                    <a href="mailto:bilalshafqat35@gmail.com" class="contact-info-card">
+                        <div class="contact-icon-bubble icon-email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="label">Email</div>
+                            <div class="value">bilalshafqat35@gmail.com</div>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/923206895845?text=Hi%20Bilal,%20I%20saw%20your%20portfolio!" target="_blank" class="contact-info-card">
+                        <div class="contact-icon-bubble icon-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="label">WhatsApp</div>
+                            <div class="value">+92 320 6895845</div>
+                        </div>
+                    </a>
+
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/bilalshafqat35-debug" target="_blank" class="contact-info-card">
+                        <div class="contact-icon-bubble icon-github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="label">GitHub</div>
+                            <div class="value">bilalshafqat35-debug</div>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/muhammad-bilal-shafqat-b54992391" target="_blank" class="contact-info-card">
+                        <div class="contact-icon-bubble icon-linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="label">LinkedIn</div>
+                            <div class="value">Muhammad Bilal Shafqat</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Right: Contact Form -->
                 <div class="col-lg-7 reveal">
                     <div class="contact-form-card">
-                        <h3 class="text-white font-weight-bold mb-3" style="font-size: 1.4rem;">Send a Message</h3>
-                        
-                        <!-- Success Message Alert -->
+                        <h4 style="color: var(--text-primary); font-weight: 700; margin-bottom: 20px;">
+                            <i class="fas fa-paper-plane me-2 text-cyan"></i> Send a Message
+                        </h4>
+
+                        <!-- Success Alert -->
                         {% if messages %}
                             {% for message in messages %}
-                                <div class="alert alert-success d-flex align-items-center mb-4" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #10B981;">
+                                <div class="alert d-flex align-items-center mb-4" style="background: rgba(0, 255, 238, 0.1); border: 1px solid var(--cyan); color: var(--cyan);">
                                     <i class="fas fa-check-circle me-2"></i> {{ message }}
                                 </div>
                             {% endfor %}
@@ -214,149 +387,17 @@
                         <form method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <button type="submit" class="btn-primary-cta w-100 justify-content-center mt-3">
+                            <button type="submit" class="btn-cyan w-100 justify-content-center mt-3" style="border: none; cursor: pointer; font-size: 1rem; padding: 14px;">
                                 <span>Send Message</span>
                                 <i class="fas fa-paper-plane ms-2"></i>
                             </button>
                         </form>
                     </div>
                 </div>
-                
-                <!-- Right Side Channels -->
-                <div class="col-lg-5 reveal">
-                    <div class="d-flex flex-column">
-                        
-                        <!-- Email Card -->
-                        <a href="mailto:bilalshafqat35@gmail.com" class="contact-info-card">
-                            <div class="contact-icon-bubble icon-email">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="label">Email Address</div>
-                                <div class="value">bilalshafqat35@gmail.com</div>
-                            </div>
-                        </a>
-                        
-                        <!-- WhatsApp Card -->
-                        <a href="https://wa.me/923206895845?text=Hi%20Bilal,%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect!" target="_blank" class="contact-info-card">
-                            <div class="contact-icon-bubble icon-whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="label">WhatsApp Direct</div>
-                                <div class="value">+92 320 6895845</div>
-                            </div>
-                        </a>
 
-                        <!-- GitHub Card -->
-                        <a href="https://github.com/bilalshafqat35-debug" target="_blank" class="contact-info-card">
-                            <div class="contact-icon-bubble icon-github">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="label">GitHub Profile</div>
-                                <div class="value">github.com/bilalshafqat35-debug</div>
-                            </div>
-                        </a>
-
-                        <!-- LinkedIn Card -->
-                        <a href="https://www.linkedin.com/in/muhammad-bilal-shafqat-b54992391" target="_blank" class="contact-info-card">
-                            <div class="contact-icon-bubble icon-linkedin">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                            <div class="contact-details">
-                                <div class="label">LinkedIn Profile</div>
-                                <div class="value">Muhammad Bilal Shafqat</div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 </div>
-<!-- Custom CSS for Contact Cards & Skills -->
-<style>
-    /* Contact Cards Styling */
-    .contact-cards-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .contact-card {
-        display: block;
-        background-color: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 25px 30px;
-        text-decoration: none;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        position: relative;
-        overflow: hidden;
-    }
-    .contact-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 3px; height: 100%;
-        background-color: #FFFFFF;
-        transform: scaleY(0);
-        transform-origin: bottom;
-        transition: transform 0.4s ease;
-    }
-    .contact-card:hover {
-        background-color: rgba(255, 255, 255, 0.07);
-        border-color: rgba(255, 255, 255, 0.3);
-        transform: translateX(10px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .contact-card:hover::before {
-        transform: scaleY(1);
-    }
-    .contact-label {
-        color: #999;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        transition: color 0.3s;
-    }
-    .contact-card:hover .contact-label {
-        color: #FFFFFF;
-    }
-    .contact-value {
-        color: #E0E0E0;
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
 
-    /* Contact Form Styling */
-    .contact-form-wrapper input, 
-    .contact-form-wrapper textarea {
-        background-color: #0D0D0D !important;
-        border: 1px solid #333 !important;
-        color: #E0E0E0 !important;
-        border-radius: 8px;
-        padding: 12px;
-    }
-    .contact-form-wrapper input:focus, 
-    .contact-form-wrapper textarea:focus {
-        background-color: #121212 !important;
-        border-color: #FFFFFF !important;
-        box-shadow: none !important;
-        color: #FFFFFF !important;
-    }
-    .contact-form-wrapper label {
-        color: #999;
-        margin-bottom: 5px;
-        font-weight: 500;
-    }
-
-    /* Skills Hover Effect */
-    .skill-card:hover {
-        border-color: #FFFFFF !important;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(255,255,255,0.05);
-    }
-</style>
 {% endblock %}
